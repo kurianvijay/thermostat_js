@@ -33,6 +33,15 @@ $(document).ready(function() {
     $('#power-saving-status').text('off');
   })
 
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=3e0b121f266b86a2c7c271d5e8d6ab99&units=metric', function(data) {
+  $('#current-temperature').text(data.main.temp);
+  })
+
+  $('#current-city').change(function() {
+    var city = $('#current-city').val();
+    displayWeather(city)
+  })
+
   function energyUsage() {
     $('#energy-usage-status').text(thermostat.energyUsage())
   }
@@ -41,6 +50,18 @@ $(document).ready(function() {
   function updateTemp() {
     $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.energyUsage());
+  }
+
+  function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+    var token = '&appid=3e0b121f266b86a2c7c271d5e8d6ab99';
+    var units = '&units=metric';
+    $.get(url + token + units, function(data) {
+      $('#current-temperature').text(data.main.temp);
+      })
+    }
+
+
     // Seperation of concerns
     // if(thermostat.energyUsage() === 'low-usage') {
     //   $('#temperature').css('color', 'green')
@@ -49,6 +70,5 @@ $(document).ready(function() {
     // } else {
     //   $('#temperature').css('color', 'red')
     // }
-  }
 //3e0b121f266b86a2c7c271d5e8d6ab99 - API KEY
 });
