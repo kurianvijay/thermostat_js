@@ -40,7 +40,7 @@ describe("Thermostat", function() {
   });
 
   describe(".downTemp", function() {
-    it("increase temperature by 1", function() {
+    it("reduce temperature by 1", function() {
       thermostat.downTemp();
       expect(thermostat.currentTemp()).toEqual(19);
     });

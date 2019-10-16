@@ -24,25 +24,28 @@ Thermostat.prototype.downTemp = function() {
     return;
   }
   else {
-  this.temperature -= 1;}
+   return this.temperature -= 1;}
 };
 
 Thermostat.prototype.isMinimumTemp = function() {
-  // return this.DEFAULT_TEMPERATURE === this.minTemp;
-  return true;
+  return this.temperature === this.minTemp;
 }
 
 Thermostat.prototype.isPowerSaveOn = function() {
   return this.powerSavingMode === true;
-}
+};
+
 
 Thermostat.prototype.turnPowerSaveOff = function() {
-  return this.powerSavingMode = false;
+  this.powerSavingMode = false;
 }
 
 Thermostat.prototype.turnPowerSaveOn = function() {
-  return this.powerSavingMode = true;
+   this.powerSavingMode = true;
+  if ( this.temperature > this.maxLimitPSON ) {
+    this.temperature = this.maxLimitPSON
 }
+};
 
 Thermostat.prototype.isMaxTemp = function() {
   if (this.isPowerSaveOn() === true) {
