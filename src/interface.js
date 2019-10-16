@@ -50,5 +50,5 @@ $(document).ready(function() {
     //   $('#temperature').css('color', 'red')
     // }
   }
-
+//3e0b121f266b86a2c7c271d5e8d6ab99 - API KEY
 });
