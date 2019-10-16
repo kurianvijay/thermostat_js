@@ -25,7 +25,7 @@ $(document).ready(function() {
     thermostat.turnPowerSaveOn()
     updateTemp()
     energyUsage()
-    $('#power-saving-status').text('on');
+    $('#power-saving-status').text('on');cd
   })
 
   $('#powersavingmode-off').on('click', function(){
@@ -40,13 +40,15 @@ $(document).ready(function() {
 
   function updateTemp() {
     $('#temperature').text(thermostat.temperature);
-    if(thermostat.energyUsage() === 'low-usage') {
-      $('#temperature').css('color', 'green')
-    } else if(thermostat.energyUsage() === 'medium-usage') {
-      $('#temperature').css('color', 'black')
-    } else {
-      $('#temperature').css('color', 'red')
-    }
+    $('#temperature').attr('class', thermostat.energyUsage());
+    // Seperation of concerns
+    // if(thermostat.energyUsage() === 'low-usage') {
+    //   $('#temperature').css('color', 'green')
+    // } else if(thermostat.energyUsage() === 'medium-usage') {
+    //   $('#temperature').css('color', 'black')
+    // } else {
+    //   $('#temperature').css('color', 'red')
+    // }
   }
 
 });
