@@ -1,29 +1,48 @@
 <!DOCTYPE html>
-
+<center>
 <html>
   <head>
-    <link rel="stylesheet" href="energyusage.css" >
+    <link rel="stylesheet" href="bootstrap.css" >
     </head>
     <body>
+
       <style>
-        body {
+        /* body {
           background-color: rgb(62, 131, 221);
           color: rgb(187, 52, 11);
-      }
+      } */
     </style>
     <center>
       <section>
-          <h1>Current temperature: <span id="current-temperature">20</span></h1>
-  <select id="current-city">
-    <option value="london">London</option>
-    <option value="newyork">New York</option>
-    <option value="paris">Paris</option>
-    <option value="tokyo">Tokyo</option>
-    <option value="calgary">Calgary</option>
-  </select>
+        <div class="media">
+    <!-- <img src="..." class="mr-3" alt="..."> -->
+    <div class="media-body">
+      <h5 class="mt-0"><h1>Current temperature: <span id="current-temperature">20</span></h1></h5>
+
+      <div class="media mt-3">
+        <a class="mr-3" href="#">
+          <!-- <img src="..." class="mr-3" alt="..."> -->
+        </a>
+        <div class="media-body">
+          <h5 class="mt-0"><h1 id="temperature" style="font-size:50px"> Thermostat</h1></h5>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <select id="current-city">
+        <option value="london">London</option>
+        <option value="newyork">New York</option>
+        <option value="paris">Paris</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="calgary">Calgary</option>
+      </select>
   <br><br>
-        <h1 id="temperature" style="font-size:50px"> Thermostat</h1>
-        <h4> Is it cold in here? </h4>
+
+
+
+        <!-- <h4> Is it cold in here? </h4> -->
         <p>
           <button id="temperature-up"> + </button>
           <button id="temperature-down"> - </button>
@@ -45,3 +64,4 @@
       <script src="src/interface.js"></script>
     </body>
 </html>
+</center>
